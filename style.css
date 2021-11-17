@@ -1,0 +1,83 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.card{
+    width: 250px;
+    height: 300px;
+    position: relative;
+    cursor: pointer;
+}
+
+.card .content{
+    width: 100%;
+    height: 100%;
+    background: rgba(17, 70, 185, 0.089);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgb(73, 146, 168);
+    color: turquoise;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 0 30px rgba(194, 13, 179, 0.089);
+    transition: all .4s;
+}
+
+.card .content p{
+    font-size: 0.8em;
+    padding: 0.3em 1.5em;
+    text-align: center;
+}
+
+.card:hover .content{
+    color: rgb(48, 136, 109);
+}
+
+.card::before,
+.card::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    background: #1f97bb;
+    z-index: -20;
+    transition: all .4s;
+}
+
+.card::before{
+    top: 0;
+    right: 0;
+}
+
+.card::after{
+    bottom: 0;
+    left: 0;
+    background: #1f97bb;
+}
+
+.card:hover::before{
+    width: 50px;
+    height: 50px;
+    transform: translate(20px, -20px);
+    border-radius: 50%;
+}
+
+.card:hover::after{
+    width: 100px;
+    height: 100px;
+    transform: translate(-20px, 20px);
+    border-radius: 50%;
+}
